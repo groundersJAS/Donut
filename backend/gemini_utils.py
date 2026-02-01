@@ -62,7 +62,7 @@ def analyze_image(image_bytes: bytes):
 
         logger.info("[ANALYSIS] Step 2: Sending request to Google Gemini API for food analysis...")
         food_response = client.models.generate_content(
-                model="gemini-2.5-flash-lite-preview-06-17", contents=[food_prompt, image]
+                model="gemini-2.5-flash-lite", contents=[food_prompt, image]
         )
         logger.info("[ANALYSIS] Step 2 SUCCESS: Received food analysis from Gemini.")
 
@@ -119,7 +119,7 @@ def analyze_ingredient(ingredient_name):
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite-preview-06-17", 
+            model="gemini-2.5-flash-lite", 
             contents=[prompt]
         )
 
